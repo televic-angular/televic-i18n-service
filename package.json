@@ -1,8 +1,9 @@
 {
-  "name": "televic-i18n",
+  "name": "televic-i18n-service",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "i18n": "node scripts/compileI18n",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
@@ -21,7 +22,10 @@
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
+    "angular-in-memory-web-api": "^0.6.0",
     "core-js": "^2.4.1",
+    "lodash-es": "^4.17.4",
+    "path": "^0.12.7",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
   },

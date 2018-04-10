@@ -1,0 +1,78 @@
+<p>
+  i18n-service-demo works!
+</p>
+<p>How to use i18n: </p>
+<ul>
+  <li>
+    <h3>How to DI service:</h3>
+    <p>1. inject the service in corresponding module providers:</p>
+    <p>please see: </p>
+    <p>~/televic-i18n-service/src/app/i18n-service-demo/i18n-service-demo.module.ts</p>
+    <p>2. inject the service in constructor</p>
+    <p>please see: </p>
+    <p>~/televic-i18n-service/src/app/i18n-service-demo/i18n-service-demo.component.ts</p>
+    <p>then we can use the function in service to emit api call</p>
+  </li>
+</ul>
+<p>How to use i18n: </p>
+<ul>
+  <li>
+    <h3>which language do we use:</h3>
+    <h4>1.set language:</h4>
+    <p>the language get by "navigator.language" as default, once you need to select one language, you must add language options to:</p>
+    <code>
+export enum Language{{'{'}}
+  zh_CN = 1,
+  en_US,
+{{'}'}}
+
+const BCP47Mapping = {{'{'}}
+  en_US: 'en-US',
+  zh_CN: 'zh-CN',
+{{'}'}};
+    </code>
+    <p>and then have frontEnd selector or backend api to get "language" in BCP47 format and set it into localstorage: </p>
+    <p>{{"localstorage.setItem('tec_language', language)"}}</p>
+  </li>
+  <li>
+    <h3>How to use, please go to see:</h3>
+    <p>in your corresponding module: '~/televic-i18n-service/src/app/i18n-service-demo/i18n-service-demo.component.ts'
+    </p>
+    <p>in your corresponding routing module: '~/televic-i18n-service/src/app/i18n-service-demo/i18n-service-demo-routing.module.ts'</p>
+    <p>in sibling folder of: ~/televic-i18n-service/src/i18n, add the namespace and key values with indent as format:</p>
+    <p>
+      <code>
+i18nServiceDemo:
+  name: 姓名
+  sex: 性别
+  age: 年龄
+</code>
+    </p>
+    <p>then run script in terminal under project root folder: npm run i18n</p>
+  </li>
+  <li>
+    <h3>how to translate:</h3>
+    <h4>translation in typescript: use translate service</h4>
+    <p>
+      take a look at the valiable of "translatedNameLabel":
+    </p>
+    <p>~/televic-i18n-service/src/app/i18n-service-demo/i18n-service-demo.component.ts</p>
+
+    <h4>translation in template: add translate pip</h4>
+    <p>
+      example case is in below code of template.
+    </p>
+  </li>
+</ul>
+<div>
+  <span>{{'i18nServiceDemo.name' | translate}}</span>
+  <span><input type="text" class="field" placeholder="label alread been translated" /></span>
+</div>
+<div>
+  <span>{{'i18nServiceDemo.age' | translate}}</span>
+  <span><input type="text" class="field" placeholder="label alread been translated" /></span>
+</div>
+<div>
+  <span>{{'i18nServiceDemo.sex' | translate}}</span>
+  <span><input type="text" class="field" placeholder="label alread been translated" /></span>
+</div>.
